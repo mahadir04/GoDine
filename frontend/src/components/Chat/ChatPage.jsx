@@ -16,7 +16,7 @@ const ChatPage = () => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hello! I am your GeoDine Gastronomy Assistant. I analyze review aspects and geospatial distances to recommend the best spots. Ask me anything, e.g. 'find a motel in Banani'."
+      content: "Hello! I am your GoDine AI Concierge. I analyze review aspects and geospatial distances to recommend the best spots. Ask me anything, e.g. 'find a motel in Banani'."
     }
   ]);
   const [input, setInput] = useState('');

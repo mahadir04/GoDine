@@ -1,16 +1,25 @@
-# React + Vite
+# 🍽️ GoDine v2.0 Frontend — Modern React + Vite Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+GoDine is an AI-powered geospatial discovery & social networking web application for restaurants, hotels, motels, cafes, and resthouses.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Autonomous AI Agent**: Floating concierge (`FloatingAiWidget.jsx`) across all pages executing real user commands (*book table, search map, create post*).
+- **1-Tap Deals Radar**: GPS proximity scanning for active % OFF promos & discounts with instant booking.
+- **Direct User Messaging**: Peer-to-peer chat between User IDs, handles (`@alex_rivera`), and venue managers.
+- **Interactive OpenStreetMap**: Custom Leaflet pins and real-world geolocation.
+- **Aspect Sentiment Cards**: Dish-level ratings for Taste, Ambience, and Service.
+- **Google OAuth 2.0 & JWT Auth**: Secure Google Sign-In and Bearer token sessions.
 
-## React Compiler
+## 🛠️ Development Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Install dependencies
+npm install
 
-## Expanding the Oxlint configuration
+# Start local development server
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# Build production bundle
+npm run build
+```

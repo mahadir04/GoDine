@@ -394,7 +394,7 @@ const MessagesPage = () => {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. @mahir_hasan, diner@geodine.com, user_992"
+                  placeholder="e.g. @mahir_hasan, diner@godine.com, user_992"
                   value={newUserIdInput}
                   onChange={(e) => setNewUserIdInput(e.target.value)}
                   className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-4 py-3 text-xs font-bold text-zinc-900 focus:outline-none focus:border-[#FF5A5F] transition-all"

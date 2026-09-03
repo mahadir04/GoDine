@@ -19,7 +19,7 @@ const AuthPage = ({ onBackToLanding }) => {
   } = useStore();
 
   // Form state
-  const [email, setEmail] = useState('diner@geodine.com');
+  const [email, setEmail] = useState('diner@godine.com');
   const [password, setPassword] = useState('diner123');
   const [fullName, setFullName] = useState('Mahir Hasan');
   const [role, setRole] = useState('DINER');
@@ -31,7 +31,7 @@ const AuthPage = ({ onBackToLanding }) => {
 
   // Google OAuth state
   const [googleClientId, setGoogleClientId] = useState(
-    localStorage.getItem('holetmo_google_client_id') || DEFAULT_GOOGLE_CLIENT_ID
+    localStorage.getItem('godine_google_client_id') || DEFAULT_GOOGLE_CLIENT_ID
   );
   const [isGsiLoaded, setIsGsiLoaded] = useState(false);
   const [showGoogleSetup, setShowGoogleSetup] = useState(false);
@@ -177,9 +177,9 @@ const AuthPage = ({ onBackToLanding }) => {
     const id = clientIdInput.trim();
     setGoogleClientId(id);
     if (id) {
-      localStorage.setItem('holetmo_google_client_id', id);
+      localStorage.setItem('godine_google_client_id', id);
     } else {
-      localStorage.removeItem('holetmo_google_client_id');
+      localStorage.removeItem('godine_google_client_id');
     }
     setShowGoogleSetup(false);
   };
@@ -444,14 +444,14 @@ const AuthPage = ({ onBackToLanding }) => {
             <div className="flex items-center justify-center gap-2.5">
               <button
                 type="button"
-                onClick={() => { setEmail('diner@geodine.com'); setPassword('diner123'); setIsSignUp(false); }}
+                onClick={() => { setEmail('diner@godine.com'); setPassword('diner123'); setIsSignUp(false); }}
                 className="text-[11px] font-bold bg-zinc-100 hover:bg-zinc-200/80 text-zinc-800 px-3.5 py-2 rounded-xl transition-all cursor-pointer"
               >
                 🍽 Diner Account
               </button>
               <button
                 type="button"
-                onClick={() => { setEmail('owner@geodine.com'); setPassword('owner123'); setIsSignUp(false); }}
+                onClick={() => { setEmail('owner@godine.com'); setPassword('owner123'); setIsSignUp(false); }}
                 className="text-[11px] font-bold bg-[#FFF0F1] hover:bg-[#FFE2E4] text-[#FF5A5F] px-3.5 py-2 rounded-xl transition-all cursor-pointer"
               >
                 🏨 Owner Account
