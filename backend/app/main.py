@@ -33,8 +33,17 @@ app.add_middleware(
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
+import os
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+index_file = os.path.join(static_dir, "index.html")
+
 @app.get("/")
 def read_root():
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
     return {"message": "Welcome to GoDine API Gateway. Visit /docs for Swagger API documentation."}
 
 @app.on_event("startup")
@@ -42,11 +51,6 @@ def startup_event():
     # Initialize DB schemas
     Base.metadata.create_all(bind=engine)
 
-import os
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-
-static_dir = os.path.join(os.path.dirname(__file__), "static")
 if os.path.exists(static_dir):
     assets_dir = os.path.join(static_dir, "assets")
     if os.path.exists(assets_dir):
@@ -54,9 +58,9 @@ if os.path.exists(static_dir):
 
     @app.get("/{full_path:path}")
     def serve_spa(full_path: str):
-        if full_path.startswith("api/"):
+        if full_path.startswith("api/") or full_path.startswith("docs") or full_path.startswith("openapi.json"):
             return {"detail": "Not Found"}
         file_path = os.path.join(static_dir, full_path)
         if os.path.isfile(file_path):
             return FileResponse(file_path)
-        return FileResponse(os.path.join(static_dir, "index.html"))
+        return FileResponse(index_file)
