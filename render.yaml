@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: godine-app
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    envVars:
+      - key: PROJECT_NAME
+        value: GoDine
+      - key: API_V1_STR
+        value: /api/v1
+      - key: SECRET_KEY
+        generateValue: true
